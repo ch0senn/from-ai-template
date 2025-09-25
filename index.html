@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Layout</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .iframe-block {
+            width: 100%;
+            max-width: 400px; /* Adjust max width as needed */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .iframe-block iframe {
+            width: 100%;
+            height: 200px; /* Adjust height as needed */
+            border: none;
+        }
+
+        .iframe-block .description {
+            padding: 10px;
+            background-color: #f9f9f9;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Responsive design */
+        @media (min-width: 768px) {
+            .iframe-block {
+                flex: 1 1 calc(33.333% - 20px); /* 3 items per row */
+            }
+        }
+
+        @media (max-width: 767px) {
+            .iframe-block {
+                flex: 1 1 calc(50% - 20px); /* 2 items per row */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .iframe-block {
+                flex: 1 1 100%; /* 1 item per row */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Iframe Layout with Descriptions</h1>
+    <div class="container">
+        <!-- Iframe Block 1 -->
+        <div class="iframe-block">
+            <iframe src="https://freebitco.in" title="Example 1"></iframe>
+            <div class="description">This is the description for iframe 1.</div>
+        </div>
+
+        <!-- Iframe Block 2 -->
+        <div class="iframe-block">
+            <iframe src="https://minepi.com" title="Example 2"></iframe>
+            <div class="description">This is the description for iframe 2.</div>
+        </div>
+
+        <!-- Iframe Block 3 -->
+        <div class="iframe-block">
+            <iframe src="https://rollercoin.com" title="Example 3"></iframe>
+            <div class="description">This is the description for iframe 3.</div>
+        </div>
+
+        <!-- Add more iframe blocks as needed -->
+    </div>
+</body>
+</html>
